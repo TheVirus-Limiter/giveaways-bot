@@ -6,6 +6,11 @@ const client = new Discord.Client();
 const config = require('./config.json');
 client.config = config;
 
+
+client.on("ready", () => {
+     bot.user.setPresence({ activity: { name: "GiveAways | By BotArmy Dev Team", type: "WATCHING" }, status: "online" });
+});
+
 // Init discord giveaways
 const { GiveawaysManager } = require('discord-giveaways');
 client.giveawaysManager = new GiveawaysManager(client, {
